@@ -4,19 +4,19 @@ import { Home } from "./pages/Home";
 import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { Navbar } from "./componets/Navbar";
-import { ShoppingCartProvidor } from "./context/ShopingCartContext";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 function App() {
   return (
-    // <ShoppingCartProvidor>
-    <Container className="mb-4">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Container>
-    // </ShoppingCartProvidor>
+    <ShoppingCartProvider>
+      <Container className="mb-4">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Container>
+    </ShoppingCartProvider>
   );
 }
 export default App;
